@@ -5,4 +5,3 @@
 我们的联系方式：
 Nerchat！是一个国内的开源matrix服务器，我们在其中拥有单独的聊天室：
 https://chat.neboer.site/#/room/#LW:chat.neboer.site
-或者https://matrix.to/#/#LW:chat.neboer.site
