@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://yomkh3qlpeem"]
+
+[ext_resource type="Texture2D" uid="uid://dph8cc7f8hyf3" path="res://assets/Tileable stone wall texture.jpg" id="1_kruxr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bd2jy"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gr5px"]
+albedo_texture = ExtResource("1_kruxr")
+
+[sub_resource type="BoxMesh" id="BoxMesh_si7d5"]
+size = Vector3(100, 1, 100)
+
+[node name="MovementTest" type="Node3D"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_bd2jy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+material_override = SubResource("StandardMaterial3D_gr5px")
+mesh = SubResource("BoxMesh_si7d5")
+skeleton = NodePath("../CollisionShape3D")
