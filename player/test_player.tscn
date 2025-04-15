@@ -6,7 +6,7 @@ size = Vector3(0.7, 1.8, 0.7)
 [sub_resource type="BoxMesh" id="BoxMesh_ql0em"]
 size = Vector3(0.7, 1.8, 0.7)
 
-[node name="test_player" type="Node3D"]
+[node name="TestPlayer" type="Node3D"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 
