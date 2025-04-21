@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://yomkh3qlpeem"]
+[gd_scene load_steps=8 format=3 uid="uid://yomkh3qlpeem"]
 
 [ext_resource type="Texture2D" uid="uid://dph8cc7f8hyf3" path="res://assets/Tileable stone wall texture.jpg" id="1_kruxr"]
 [ext_resource type="PackedScene" uid="uid://dx8mgbnc3c668" path="res://player/test_player.tscn" id="2_bd2jy"]
@@ -12,6 +12,10 @@ albedo_texture = ExtResource("1_kruxr")
 [sub_resource type="BoxMesh" id="BoxMesh_si7d5"]
 size = Vector3(100, 1, 100)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_gr5px"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xt0m4"]
+
 [node name="MovementTest" type="Node3D"]
 
 [node name="Ground" type="StaticBody3D" parent="."]
@@ -24,5 +28,24 @@ material_override = SubResource("StandardMaterial3D_gr5px")
 mesh = SubResource("BoxMesh_si7d5")
 skeleton = NodePath("../CollisionShape3D")
 
-[node name="test_player" parent="." instance=ExtResource("2_bd2jy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42271, 0)
+[node name="Player" parent="." instance=ExtResource("2_bd2jy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.98417, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.850628, 0.525769, 0, -0.525769, 0.850628, 0, 16.4376, 16.5623)
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.850628, 0.525769, 0, -0.525769, 0.850628, 0, 16.4376, 16.5623)
+
+[node name="Camera3D" type="Camera3D" parent="Marker3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.93305, -17.5543)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_gr5px")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_xt0m4")
+skeleton = NodePath("../..")
