@@ -32,6 +32,7 @@ skeleton = NodePath("../CollisionShape3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.98417, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
 transform = Transform3D(1, 0, 0, 0, 0.850628, 0.525769, 0, -0.525769, 0.850628, 0, 25.1458, 25.0093)
 
 [node name="Marker3D" type="Marker3D" parent="."]
