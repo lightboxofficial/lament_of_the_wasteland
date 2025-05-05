@@ -1,3 +1,4 @@
 {
-    "editor.cursorStyle": "block"
+    "editor.cursorStyle": "block",
+    "godotTools.editorPath.godot4": "/workspaces/lament_of_the_wasteland/player/test_player.tscn"
 }
